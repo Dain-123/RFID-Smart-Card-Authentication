@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "author": "Dainty Teresa Davis",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 58.2, "left": -202.2, "attrs": {} },
+    { "type": "board-mfrc522", "id": "rfid1", "top": -60.25, "left": 137.84, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 261.6,
+      "left": 88.2,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 121.6,
+      "left": 159.2,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "rfid1:GND", "uno:GND.1", "black", [ "h0" ] ],
+    [ "rfid1:MISO", "uno:12", "green", [ "h0" ] ],
+    [ "rfid1:MOSI", "uno:11", "green", [ "h-201.6", "v67.2" ] ],
+    [ "rfid1:SCK", "uno:13", "green", [ "h0" ] ],
+    [ "uno:10", "rfid1:SDA", "green", [ "v0" ] ],
+    [ "rfid1:3.3V", "uno:3.3V", "green", [ "h0" ] ],
+    [ "bz1:2", "uno:5", "green", [ "v0" ] ],
+    [ "bz1:1", "uno:GND.2", "green", [ "v0" ] ],
+    [ "lcd1:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
